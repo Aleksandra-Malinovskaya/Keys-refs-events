@@ -1,8 +1,12 @@
 const List = ({ mas, setMas }) => {
 
   const handleClick = (index) => {
-    const newMas = [...mas];
-    newMas[index] = "!!!" + newMas[index];
+    const newMas = mas.map((item, ind)=>{
+      if(ind === index){
+        item = "!!!" + item;
+      }
+      return item
+    })
     setMas(newMas);
   };
 
